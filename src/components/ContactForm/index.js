@@ -5,8 +5,7 @@ import Input from '../Input';
 import Select from '../Select';
 import Button from '../Button';
 
-import { Form } from './styles';
-import { ButtonContainer } from '../FormGroup/styles';
+import { Form, ButtonContainer } from './styles';
 
 export default function ContactForm({ buttonLabel }) {
   return (
