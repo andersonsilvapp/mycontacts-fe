@@ -11,12 +11,12 @@ import {
   ListContainer,
   Card,
 } from './styles';
-import Modal from '../../components/Modal';
+import Loader from '../../components/Loader';
 
 export default function Home() {
   return (
     <Container>
-      <Modal danger />
+      <Loader />
 
       <InputSearchContainer>
         <input type="text" placeholder="Pesquisar pelo nome" />
