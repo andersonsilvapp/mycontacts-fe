@@ -11,12 +11,10 @@ import {
   ListContainer,
   Card,
 } from './styles';
-import Loader from '../../components/Loader';
 
 export default function Home() {
   return (
     <Container>
-      <Loader />
 
       <InputSearchContainer>
         <input type="text" placeholder="Pesquisar pelo nome" />
