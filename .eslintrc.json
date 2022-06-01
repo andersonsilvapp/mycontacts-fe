@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:react-hooks/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -11,12 +15,19 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "(useMyCustomHook|useMyOtherCustomHook)"
+      }
+    ],
+    "class-methods-use-this": "off"
   }
 }
