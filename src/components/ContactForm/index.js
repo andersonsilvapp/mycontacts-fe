@@ -32,9 +32,7 @@ export default function ContactForm({ buttonLabel }) {
         const categoriesList = await CategoriesService.listCategories();
 
         setCategories(categoriesList);
-      } catch {
-        console.log('error');
-      }
+      } catch {}
     }
 
     loadCategories();
