@@ -26,6 +26,10 @@ class HttpClient {
 
     const headers = new Headers();
 
+    if (options.body) {
+      headers.append('Content-Type', 'application/json');
+    }
+
     if (options.headers) {
       Object.entries(options.headers).forEach(([name, value]) => {
         headers.append(name, value);
