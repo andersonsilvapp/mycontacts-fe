@@ -10,7 +10,10 @@ class ContactsService {
   }
 
   async createContact(contact) {
-    return this.httpClient.post('/contacts', { body: contact });
+    return this.httpClient.post('/contacts', { body: contact,
+      headers: {
+        'Content-Type': 'application/json',
+      } });
   }
 }
 
