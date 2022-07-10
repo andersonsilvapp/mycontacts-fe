@@ -19,6 +19,13 @@ class ContactsService {
         'Content-Type': 'application/json',
       } });
   }
+
+  updateContact(id, contact) {
+    return this.httpClient.put(`/contacts/${id}`, { body: contact,
+      headers: {
+        'Content-Type': 'application/json',
+      } });
+  }
 }
 
 export default new ContactsService();
