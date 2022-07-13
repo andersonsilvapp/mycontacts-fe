@@ -29,10 +29,21 @@ class HttpClient {
     });
   }
 
+  delete(path, options) {
+    return this.makeRequest(path, {
+      method: 'DELETE',
+      headers: options?.headers,
+    });
+  }
+
   async makeRequest(path, options) {
     await delay();
 
     const headers = new Headers();
+
+    if (options.body) {
+      headers.append('Content-Type', 'application/json');
+    }
 
     if (options.headers) {
       Object.entries(options.headers).forEach(([name, value]) => {
@@ -48,7 +59,7 @@ class HttpClient {
 
     let responseBody = null;
     const contenType = response.headers.get('Content-Type');
-    if (contenType.includes('application/json')) {
+    if (contenType?.includes('application/json')) {
       responseBody = await response.json();
     }
 
